@@ -1,0 +1,43 @@
+## エンコーディング
+encoding utf8 utf8
+defencoding utf8
+defkanji utf8
+
+## エスケープキーの設定
+escape ^Tt
+
+## スタートアップ時メッセージ無効
+startup_message off
+
+# プロセス番号の確認
+## $ screen -ls
+
+## 自動でデタッチする
+autodetach on
+
+# コピーモード
+# C-z [ とタイプすると、screenはコピーモードになる。
+# viなキーバインドでカーソル移動可能
+# スペースキーを1度押せばmark set 二度目でコピー。
+# C-z [ でコピーモードを抜ける。
+# emacs keybind for copy mode
+markkeys h=^b:l=^f:$=^e:^d=^v:^D=^V
+
+# copy/scrollback mode (C-t esc)で戻れるhistory bufferを増やす。
+## スクロール行を 10,240行
+defscrollback 10240
+
+## ビジュアルベルを無効
+vbell off
+
+## ステータス行の設定
+# 画面下に時刻＆スクリーン一覧を表示する。
+hardstatus alwayslastline "%{= rw} %H %{= wk}%-Lw%{= bw}%n%f* %t%{= wk}%+Lw %{= wk}%=%{= gk} %y/%m/%d %c "
+
+stuff "export LANG=C"
+
+bind w windowlist -b
+
+#ウィンドウサイズの設定
+#termcapinfo xterm 'is=\E[r\E[m\E[2J\E[H\E[?7h\E[?1;4;6l'
+termcapinfo * Z0=\E[?3h:Z1=\E[?3l:is=\E[r\E[m\E[2J\E[H\E[?7h\E[?1;4;6l
