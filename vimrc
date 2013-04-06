@@ -292,6 +292,9 @@ Bundle 'Shougo/neocomplcache'
 "Bundle 'Shougo/unite.vim'
 Bundle 'thinca/vim-ref'
 Bundle 'thinca/vim-quickrun'
+Bundle 'L9'
+Bundle 'FuzzyFinder'
+Bundle 'YankRing.vim'
 
 filetype plugin indent on
 
